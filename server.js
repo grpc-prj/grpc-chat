@@ -13,7 +13,6 @@ const protoDescriptor = grpc.loadPackageDefinition(packageDefinition);
 // we'll implement the handlers here
 const join = (call, callback) => {
   const user = call.request;
-  user.id = Date.now().toString();
 
   // check username already exists.
   const userExiist = usersInChat.find((_user) => _user.name == user.name);
